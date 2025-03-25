@@ -1,0 +1,64 @@
+[build-system]
+requires = [
+    "setuptools",
+    "setuptools_scm"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conda-declarative-input-states"
+description = "Declarative input states for conda"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+keywords = ["conda"]
+authors = [
+  { name = "Peyton Murray", email = "peynmurray@gmail.com" },
+]
+dependencies = [
+  "conda >=23.9.0",
+  "pluggy",
+]
+
+[project.urls]
+Source = "https://github.com/peytondmurray/conda-declarative-input-states"
+Issues = "https://github.com/peytondmurray/conda-declarative-input-states/issues"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+lines_between_types = 1
+lines_after_imports = 2
+profile = 'black'
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+ignore = [
+    "E501", # line-length
+]
+select = [
+    "E",   # pycodestyle
+    "W",   # pycodestyle
+    "F",   # Pyflakes
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I",   # isort
+    "N",   # pep8 naming
+    "D",   # pydocstyle
+    "ANN", # annotations
+    "T10", # debugger
+    "PT",  # flake8-pytest
+    "RET", # flake8-return
+    "ARG", # flake8-unused-arguments
+    "FIX", # flake8-fixme
+    "ERA", # flake8-eradicate
+    "PD",  # pandas-vet
+    "NPY", # numpy-specific rules
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"

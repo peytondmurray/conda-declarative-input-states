@@ -12,5 +12,15 @@ def conda_post_commands() -> Iterable[plugins.CondaPostCommand]:
     yield plugins.CondaPostCommand(
         name="declarative-input-states",
         action=update_state,
-        run_for={"install", "create", "env_create"},
+        run_for={
+            "create",
+            "install",
+            "remove",
+            "uninstall",
+            "update",
+            "upgrade",
+            "env_create",
+            "env_remove",
+            "env_update",
+        },
     )

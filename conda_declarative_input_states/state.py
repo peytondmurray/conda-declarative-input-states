@@ -6,7 +6,14 @@ from conda.env.env import Environment
 from conda.history import History
 
 
-def update_state(_command: str):
+def update_state(_command: str) -> None:
+    """Update `conda-meta/env.yml` with the current packages in the environment.
+
+    Parameters
+    ----------
+    _command : str
+        Conda subcommand invoked by the user that triggered this call
+    """
     prefix = context.active_prefix
     env_yml = str(pathlib.Path(prefix) / "conda-meta" / "env.yml")
 

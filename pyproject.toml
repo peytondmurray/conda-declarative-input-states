@@ -10,7 +10,7 @@ name = "conda-declarative-input-states"
 description = "Declarative input states for conda"
 version = "0.0.1"
 readme = "README.md"
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.10,<3.13"
 keywords = ["conda"]
 authors = [
   { name = "Peyton Murray", email = "peynmurray@gmail.com" },

@@ -24,6 +24,9 @@ dependencies = [
 Source = "https://github.com/peytondmurray/conda-declarative-input-states"
 Issues = "https://github.com/peytondmurray/conda-declarative-input-states/issues"
 
+[project.entry-points."conda"]
+conda-declarative-input-states = "conda_declarative_input_states.plugin"
+
 [tool.black]
 line-length = 88
 

@@ -6,20 +6,14 @@ from conda.env.env import Environment
 from conda.history import History
 
 
-
-def update_state(command: str):
-    breakpoint()
-
+def update_state(_command: str):
     prefix = context.active_prefix
-    env_yml = pathlib.Path(prefix) / "conda-meta" / "env.yml"
+    env_yml = str(pathlib.Path(prefix) / "conda-meta" / "env.yml")
 
-    # Parse the command to get the spec file
     packages = History(prefix=prefix).get_state()
-    dependencies: list[str | dict[str, list[str]]] = []
-
     Environment(
         name=env_name(prefix),
-        filename=str(env_yml),
-        dependencies=dependencies,
+        filename=env_yml,
+        dependencies=list(packages),
         prefix=prefix,
     ).save()

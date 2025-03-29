@@ -17,7 +17,7 @@ def update_state(_command: str) -> None:
     prefix = context.active_prefix
     env_yml = str(pathlib.Path(prefix) / "conda-meta" / "env.yml")
 
-    packages = History(prefix=prefix).get_state()
+    packages = History(prefix=prefix).get_requested_specs_map()
     Environment(
         name=env_name(prefix),
         filename=env_yml,

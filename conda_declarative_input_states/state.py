@@ -14,7 +14,7 @@ def update_state(_command: str) -> None:
     _command : str
         Conda subcommand invoked by the user that triggered this call
     """
-    prefix = context.active_prefix
+    prefix = context.target_prefix
     env_yml = str(pathlib.Path(prefix) / "conda-meta" / "env.yml")
 
     packages = History(prefix=prefix).get_requested_specs_map()
